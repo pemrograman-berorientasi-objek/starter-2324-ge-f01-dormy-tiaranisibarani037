@@ -134,8 +134,8 @@ public class App {
             int deletedDorms = entityManager.createQuery(deleteDormsJPQL).executeUpdate();
             entityManager.getTransaction().commit();
 
-            System.out.println("Clean Tables: Students=" + deletedStudents);
-            System.out.println("Clean Tables: Dorms=" + deletedDorms);
+            // System.out.println("Clean Tables: Students=" + deletedStudents);
+            // System.out.println("Clean Tables: Dorms=" + deletedDorms);
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
             e.printStackTrace();
