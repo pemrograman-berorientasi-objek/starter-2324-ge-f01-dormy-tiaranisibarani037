@@ -8,8 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-
 import java.util.Set;
+
+//JPA = alat yang menjembatani antara Java dan database, sehingga kita bisa melakukan semua operasi yang diperlukan
+//ORM (Object Relational Mapping = teknik yang digunakan oleh JPA sehingga tidak perlu query SQL)
 
 @Entity
 @Table(name = "students")
@@ -28,14 +30,14 @@ public class Student{
     @Column(name = "gender", length = 225, nullable = false)
     private String gender;
 
-    @ManyToMany(targetEntity = Dorm.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Dorm.class, cascade = CascadeType.ALL)//jika ada perubahan di student, maka akan berdampak pada dorm
     @JoinTable(name = "student_dorms", joinColumns = @JoinColumn(name = "dorm_nim", referencedColumnName = "nim"), 
     inverseJoinColumns = @JoinColumn(name = "dorm_name", referencedColumnName = "name"))
 
-    private Set<Dorm> dorms;
+    private Set<Dorm> dorms; //set = kumpulan data yang tidak memiliki duplikat
 
     public Student(){
-        //empty
+        //default constructor
     }
 
     public Student(String nim_, String std_nama_, Integer year_, String gender_){
@@ -45,7 +47,7 @@ public class Student{
         this.gender = gender_;
     }
 
-    public Student(String nim, String std_nama, Integer year, String gender, Set<Dorm> dorms){
+    public Student(String nim, String std_nama, Integer year, String gender, Set<Dorm> dorms){ //konstruktor dengan dorms sebagai parameter untuk inisialisasi atribut dgn nilai yang diberikan ke dorm
         this.nim = nim;
         this.std_nama = std_nama;
         this.year = year;

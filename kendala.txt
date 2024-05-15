@@ -1,0 +1,8 @@
+Penambahan entitas yang melebihi kapasitas sehingga programnya bingung ingin menampilkan student yang mana dari dorm yang di assign
+Permasalahan pom xml masih mengalami kebingungan ketika memodifikasi pom xml
+Terdapat permasalahan mengenai versi dari eclipselink yang disediakan sehingga perlu memperbaharui pom.xml nya
+Permasalahan dalam pemecahan masalah untuk menambahkan student dengan komponen yang sama seperti nama atau nimnya
+Permasalahan dalam memecahkan masalah terkait assign student ke dalam dorm
+Permasalahan sulit membedakan nama kolom dalam tabel karena ada beberapa atribut yang memiliki nama kolom yang sama.
+Permasalahan ketika nilai yang seharusnya di set kedalam student displayall bernilai null padahal kami sudah bisa memasukkan valuenya ke dalam student
+
